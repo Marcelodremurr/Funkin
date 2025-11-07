@@ -53,7 +53,7 @@ jobs:
               || manual
 
   gather-tags:
-    runs-on: build-set
+    runs-on: windows-latest
     outputs:
       primary: ${{ steps.build-tags.outputs.primary }}
       list: ${{ steps.build-tags.outputs.list }}
@@ -90,7 +90,7 @@ jobs:
   docker-image:
     needs: [gather-changes, gather-tags]
     if: needs.gather-changes.outputs.trigger-build == 'true'
-    runs-on: build-set
+    runs-on: windows-latest
     permissions:
       contents: read
       packages: write
