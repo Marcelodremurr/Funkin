@@ -107,6 +107,8 @@ jobs:
           password: ${{ secrets.GITHUB_TOKEN }}
       - name: Build and push Docker image
         uses: docker/build-push-action@v6
+      - name: Docker Setup Buildx
+        uses: docker/setup-buildx-action@v3.11.1
         with:
           context: ./build
           push: true
