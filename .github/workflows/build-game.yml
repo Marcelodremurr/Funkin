@@ -19,7 +19,7 @@ on:
 jobs:
 
   gather-changes:
-    runs-on: build-set
+    runs-on: windows-latest
     outputs:
       trigger-build: ${{ steps.should-trigger.outputs.result }}
     steps:
